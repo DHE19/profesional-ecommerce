@@ -1,10 +1,15 @@
 import HomePage from './HomePage'
+import { store } from '../redux/store'
+import { Provider } from 'react-redux'
 
 
 export default function Home() {
   return (
-    <>
-      <HomePage/>
-    </>
+
+      //REMOVER PROVIDER DE AQUÍ
+      <Provider store={store}>
+        <HomePage/>
+      </Provider>
+
   )
 }

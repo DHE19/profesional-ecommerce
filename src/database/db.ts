@@ -1,7 +1,7 @@
 export const data:IDatabaseModel = {
     products:[
         {
-            name:'Sudadera estampado de esqueleto de hombros caídos',
+            name:'Sudadera estampado',
             slug:'rw2206061337009486',
             category:'sudadera',
             image:'https://img.ltwebstatic.com/images3_pi/2022/07/05/1657005575a0608d748f362352979a51ca8e94a396.webp',
@@ -9,7 +9,7 @@ export const data:IDatabaseModel = {
             brand:'shine',
             rating:4.3,
             numReviews:200,
-            countInStock:300,
+            countInStock:0,
             description:'estampado de esqueleto de hombros caídos'
         },
         {
@@ -98,3 +98,6 @@ export const data:IDatabaseModel = {
         },
     ]
 }
+
+
+export const getProduct = (slug:string): IProduct => data.products.find(p => p.slug === slug) as IProduct;

@@ -3,7 +3,7 @@ import Link from "next/link"
 const Nav = () => {
     return (
         <header>
-        <nav className="flex p-4 justify-between px-2 md:px-4 items-center shadow-md bg-slate-900 text-white">
+        <nav className="flex p-4 justify-between px-2 md:px-4 items-center shadow-md  bg-zinc-900 text-white">
             <Link href={'/'}  className="text-lg font-bold text-slate-200">
                 OFERTONGÓN
             </Link>

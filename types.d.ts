@@ -1,3 +1,11 @@
+
+
+
+interface Icart {
+    slug:string;
+    quantity:number;
+}
+
 interface IProduct{
     name:string;
     slug:string;

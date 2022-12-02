@@ -1,16 +1,13 @@
-import Footer from "../src/components/Footer"
-import HeadInfo from "../src/components/HeadInfo"
-import Main from "../src/components/Main"
-import Nav from "../src/components/Nav"
+
+import MainShop from "../src/components/Home/Main-Home"
+import Layout from "../src/components/MainComponents/Layout"
+
 
 const HomePage = () => {
     return (
-        <>
-            <HeadInfo/>
-            <Nav/>
-            <Main/>
-            <Footer/>
-        </>
+           <Layout>
+                <MainShop/>
+           </Layout>
     )
 }
 

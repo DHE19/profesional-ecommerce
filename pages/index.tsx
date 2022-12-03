@@ -7,9 +7,9 @@ export default function Home() {
   return (
 
       //REMOVER PROVIDER DE AQUÍ
-      <Provider store={store}>
+
         <HomePage/>
-      </Provider>
+
 
   )
 }

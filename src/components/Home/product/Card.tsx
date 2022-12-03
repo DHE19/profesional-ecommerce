@@ -12,7 +12,7 @@ interface IProps{
 const Card:React.FC<IProps> = ({name, slug, image, price,addProduct}) => {
 
     const router = useRouter();
-    const handleAddProduct = () => addProduct({slug,quantity:1});
+    const handleAddProduct = () => addProduct({slug,quantity:1,price,image,name});
     const loadpage = () => router.push(`/products/${slug}`);
     
     return (

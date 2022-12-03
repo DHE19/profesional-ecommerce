@@ -1,21 +1,21 @@
 import { useSelector } from 'react-redux'
 import type { RootState } from '../redux/store'
-import { Provider } from 'react-redux'
-import { store } from '../redux/store'
-const cart = () => {
+import SummaryTable from '../src/components/Cart/SummaryTable';
+import Layout from '../src/components/MainComponents/Layout';
+
+const Cart = () => {
     //ERROR: NO ENCUENTRA AL PROVIDER POR FAVOR CORREGIR
     const products = useSelector((state: RootState) => state.cart.products);
     
+    
     return (
+        <Layout title='Check Cart'>
 
-            <div>
-                <h1>Cart</h1>
-                <div>
-                    {products.map(o => `${o.slug} - ${o.quantity}`)}
-                </div>
-            </div>
+            <SummaryTable carts={products}/>
+          
+        </Layout>
 
     )
 }
 
-export default cart
+export default Cart

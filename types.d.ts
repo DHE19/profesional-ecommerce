@@ -1,7 +1,9 @@
 
 
-
 interface Icart {
+    name:string;
+    image:string;
+    price:number;
     slug:string;
     quantity:number;
 }

@@ -12,7 +12,7 @@ const initialState:State= {
 
 
 
-const FilterTargetCart = (array:Icart[], id:string) => array.filter(i => id === i.slug);
+const FilterTargetCart = (array:Icart[], id:string) => array.filter(i => id !== i.slug);
 
 const cartsSlice = createSlice({
     name:'carts',
@@ -33,7 +33,8 @@ const cartsSlice = createSlice({
         else state.products.push(action.payload);
         },
         removeProduct:(state, action:PayloadAction<string>)=>{
-            FilterTargetCart(state.products,action.payload)
+            
+            state.products = FilterTargetCart(state.products,action.payload)
             
         },
         subtractQuantityProduct:(state, action:PayloadAction<string>) =>{

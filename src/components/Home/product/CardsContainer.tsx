@@ -11,7 +11,7 @@ const CardsContainer:React.FC<IProps> = ({products,addProduct}) => {
     //debe de crear un elemento card por cada mapeo
     //debe de pasar los datos requeridos a card
     return (
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 px-1 md:px-0 gap-3 md:gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 px-1 lg:px-0 gap-3 md:gap-4">
           {products.map(p =>(
             <Card key={p.slug}
             name={p.name}

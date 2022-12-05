@@ -21,6 +21,13 @@ interface IProduct{
     description:string;
 }
 
+interface IUser{
+    name:string,
+    email:string,
+    password:string,
+    isAdmin:boolean
+}
 interface IDatabaseModel {
+    users:user[]
     products:IProduct[];
 }

@@ -1,4 +1,19 @@
+import bcrypt from 'bcryptjs'
 export const data:IDatabaseModel = {
+
+    users:[
+        {
+            name:'Eduardo',
+            email:'info.die@gmail.com',
+            password:bcrypt.hashSync('123456'),
+            isAdmin:true
+        }, {
+            name:'Inari',
+            email:'inari_narinas@gmail.com',
+            password:bcrypt.hashSync('inari'),
+            isAdmin:false
+        }
+    ],
     products:[
         {
             name:'Sudadera estampado',

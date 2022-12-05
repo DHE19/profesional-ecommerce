@@ -1,13 +1,18 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
+import Cookies  from 'js-cookie';
 
+
+const KEY_CART = 'cart';
 interface State {
     products:Icart[],
 }
 
+//if there are a value store in the cache retrive the a value, if not just create a new empty array
+const cookieCarts = Cookies.get(KEY_CART) ? <Icart[]>JSON.parse(<string>Cookies.get('cart')) : []
 
-const initialState:State= {
-    products:[]
+const initialState:State = {
+    products:cookieCarts
 }
 
 
@@ -31,18 +36,22 @@ const cartsSlice = createSlice({
         }
         //añadimos el nuevo producto
         else state.products.push(action.payload);
-        },
-        removeProduct:(state, action:PayloadAction<string>)=>{
-            
-            state.products = FilterTargetCart(state.products,action.payload)
-            
-        },
-        subtractQuantityProduct:(state, action:PayloadAction<string>) =>{
+
+        Cookies.set(KEY_CART,JSON.stringify(state.products));        
+    },
+    removeProduct:(state, action:PayloadAction<string>)=>{
+        
+        state.products = FilterTargetCart(state.products,action.payload);
+        Cookies.set(KEY_CART,JSON.stringify(state.products));        
+        
+    },
+    subtractQuantityProduct:(state, action:PayloadAction<string>) =>{
             const indexProduct = state.products.findIndex(i => i.slug === action.payload);
             if(indexProduct === -1) return;
             let product = state.products[indexProduct].quantity - 1;
             if(product > 0) state.products[indexProduct].quantity = product;
             else state.products = FilterTargetCart(state.products,action.payload);
+            Cookies.set(KEY_CART,JSON.stringify(state.products));        
         }
         
     }

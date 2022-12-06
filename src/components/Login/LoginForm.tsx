@@ -1,16 +1,42 @@
 import {useForm, SubmitHandler } from 'react-hook-form'
 import  { useRouter } from "next/router"
 import { emailOptions, FormValues, passwordOptions } from './validationValues';
+import {signIn, useSession} from 'next-auth/react';
+import { toast } from 'react-toastify';
+import { useEffect } from 'react';
+
 
   
 
 const LoginForm = () => {
+    const {data:session} = useSession();
 
     const { handleSubmit,register,formState:{errors}} = useForm<FormValues>();
     const router = useRouter();
+    const {redirect} = router.query;
+
+    useEffect(()=>{
+        if(session?.user){
+            //TODO:
+            //checar como usar redirect en push please!!!!!!!!!
+            router.push('/');
+        }
+    },[router,session,redirect])
     
-    const submitHandler:SubmitHandler<FormValues> = (data) =>{
-        console.log(data);
+    const submitHandler:SubmitHandler<FormValues> = async ({email,password}) =>{
+        try {
+            const result = await signIn('credentials',{
+                redirect: false,
+                email,
+                password,
+            });
+            if(result?.error){
+                toast.error(result.error);
+            }
+            toast.success('LoggedIn')
+        } catch (error) {
+            toast.error('hubo un error fatal')
+        }
         
     }
     return (

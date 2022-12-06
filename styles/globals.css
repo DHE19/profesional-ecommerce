@@ -23,3 +23,7 @@ hr{
 .move-x-100{
 transform: translateX(-100%);
 }
+
+.dropdown-link{
+  @apply block w-[90%] mx-auto p-4 rounded-md hover:bg-gray-300 text-slate-800;
+}

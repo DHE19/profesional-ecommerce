@@ -16,11 +16,9 @@ const LoginForm = () => {
     const {redirect} = router.query;
 
     useEffect(()=>{
-        if(session?.user){
-            //TODO:
-            //checar como usar redirect en push please!!!!!!!!!
-            router.push('/');
-        }
+        if(session?.user)
+            router.push((redirect as string) ?? '/');
+        
     },[router,session,redirect])
     
     const submitHandler:SubmitHandler<FormValues> = async ({email,password}) =>{

@@ -14,3 +14,12 @@ hr{
     height: 1px;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0));
 }
+
+
+.move-x-0{
+  transform: translateX(0%);
+} 
+
+.move-x-100{
+transform: translateX(-100%);
+}

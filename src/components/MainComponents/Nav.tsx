@@ -11,8 +11,6 @@ import UserMenu from "./nav/UserMenu";
 
 
 const cartQuantity  =(products:Icart[]) => {
-    console.log(products);
-    
      return getTotalQuantity(products) > 0 ? (
         <span className="absolute flex items-center justify-center text-[0.6rem] bg-red-500 h-5 w-5 -bottom-3 -right-3 rounded-full">
             {getTotalQuantity(products)}

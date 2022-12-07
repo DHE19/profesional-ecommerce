@@ -9,7 +9,7 @@ interface State {
 }
 
 //if there are a value store in the cache retrive the a value, if not just create a new empty array
-const cookieCarts = Cookies.get(KEY_CART) ? <Icart[]>JSON.parse(<string>Cookies.get('cart')) : []
+const cookieCarts = Cookies.get(KEY_CART) ? <Icart[]>JSON.parse(<string>Cookies.get(KEY_CART)) : []
 
 const initialState:State = {
     products:cookieCarts

@@ -8,6 +8,17 @@ interface Icart {
     quantity:number;
 }
 
+
+ interface IShippingDetails {
+    fullName:string,
+    country:string,
+    state:string,
+    city:string,
+    postalCode:number,
+    address:string
+}
+
+
 interface IProduct{
     name:string;
     slug:string;

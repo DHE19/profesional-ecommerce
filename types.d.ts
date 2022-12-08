@@ -8,6 +8,7 @@ interface Icart {
     quantity:number;
 }
 
+ type PaymentMethod = 'Paypal'| 'Stripe' |'Cash'| 'No-Selected';
 
  interface IShippingDetails {
     fullName:string,

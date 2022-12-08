@@ -29,5 +29,9 @@ transform: translateX(-100%);
 }
 
 .input-shipping{
-  @apply px-2 block bg-slate-800 w-full rounded-md py-2 text-slate-50
+  @apply px-2 block bg-slate-500 focus:outline-sky-300 w-full rounded-md py-2 text-slate-50
+}
+
+.button-payment-process{
+  @apply px-6 py-2 bg-sky-500 text-white hover:bg-sky-400 rounded-lg 
 }

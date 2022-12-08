@@ -1,11 +1,13 @@
 import {configureStore} from '@reduxjs/toolkit'
+import paymentReducer from './paymentReducer';
 import cartReducer from './reducers';
 import shippingReducers from './shippingReducers';
 
 export const store = configureStore({
     reducer:{
         cart:cartReducer,
-        shipping: shippingReducers
+        shipping: shippingReducers,
+        payment: paymentReducer
     }
 })
 
